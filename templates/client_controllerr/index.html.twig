@@ -1,0 +1,104 @@
+{#{% extends 'base.html.twig' %}
+
+{% block title %}Annonces index{% endblock %}
+
+{% block bodyshow %}
+    <h1>Annonces index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Region</th>
+                <th>Prix</th>
+                <th>Type</th>
+                <th>Email</th>
+                <th>Categorie</th>
+                <th>Duree</th>
+                <th>Image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for annonce in annonces %}
+            <tr>
+                <td>{{ annonce.id }}</td>
+                <td>{{ annonce.region }}</td>
+                <td>{{ annonce.prix }}</td>
+                <td>{{ annonce.type }}</td>
+                <td>{{ annonce.email }}</td>
+                <td>{{ annonce.categorie }}</td>
+                <td>{{ annonce.duree }}</td>
+                <td>{{ annonce.image }}</td>
+                <td>
+                    <a href="{{ path('app_client_controllerr_show', {'id': annonce.id}) }}">show</a>
+                    <a href="{{ path('app_client_controllerr_edit', {'id': annonce.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+<center> 
+    <a href="{{ path('app_client_controllerr_new') }}" class="btn btn-b" >Create new</a>
+    </center> 
+{% endblock %}#}
+{#------------- Test affiche with image  --------------------#}
+{% extends 'base.html.twig' %}
+
+{% block title %}Annonces index{% endblock %}
+
+{% block bodyshow %}
+    
+    <center>
+    <h1>Welcome To CasaNuova</h1>
+ </center> 
+    <table class="table">
+        <thead>
+        </thead>
+        <tbody>
+           <section class="news-grid grid">
+ <div class="container">
+        <div class="row">
+
+
+{{form(search)}}
+
+        {% for annonce in annonces %}
+          <div class="col-md-4">
+            <div class="card-box-b card-shadow news-box">
+              <div class="img-box-b">
+                <img src={{ asset('uploads/imaage/'~ annonce.image) }} alt="" class="img-b img-fluid">
+
+              </div>
+              <div class="card-overlay">
+                <div class="card-header-b">
+                  <div class="card-category-b">
+                    <a href="{{ path('app_client_controllerr_show', {'id': annonce.id}) }}" class="category-b">Show</a>
+                  </div>
+                  <div class="card-title-b">
+                    <h2 class="title-2">
+                      <a href="blog-single.html">{{annonce.region}}
+                        <br> new</a>
+                    </h2>
+                  </div>
+                  <div class="card-date">
+                    <span class="date-b">{{annonce.prix}} DT</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+           </div>
+          </div>
+           </section>
+        </tbody>
+    </table>
+<center> 
+    <a href="{{ path('app_client_controllerr_new') }}" class="btn btn-b" >Create new</a>
+    </center> 
+{% endblock %}

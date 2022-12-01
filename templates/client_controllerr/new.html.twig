@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Annonces{% endblock %}
+
+
+{% block bodyNew %}
+
+<div class="title-box-d">
+              <h3 class="title-d">Créer nouvelle Annonce </h3>
+            </div>
+
+
+
+<center> 
+    {{ include('client_controllerr/_form.html.twig') }}
+      </center> 
+
+  
+    <a href="{{ path('app_client_controllerr_index') }}"  class="btn btn-b ">back to list </a>
+{% endblock %}

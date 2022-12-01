@@ -1,0 +1,65 @@
+{{form_start(form , {'attr':{'novalidate': 'novalidate'}} )}}
+
+ <center>
+
+        <div class="col-sm-12 section-t8">
+            <div class="row">
+              <div class="col-md-7">
+               
+                  <div class="row">
+
+                    <div class="col-md-12 mb-3text-center">
+                      <div class="form-group">
+                         {{ form_label(form.region, 'Region') }}
+                           {{ form_widget(form.region, {'attr': {'class': 'form-control form-control-lg form-control-a'}}) }}
+                           {{ form_errors(form.region) }}                         
+                       </div>
+                        <div class="col-md-12 mb-3">
+                      <div class="form-group">
+     {{ form_label(form.categorie, 'Categorie') }}
+       {{ form_widget(form.categorie, {'attr': {'class': 'form-control form-control-lg form-control-a'}}) }}
+      {{ form_errors(form.categorie) }}                         
+                    </div>
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+  {{ form_label(form.prix,"prix") }}
+ {{ form_widget(form.prix,{'attr': {'class': 'form-control form-control-lg form-control-a'}})}}
+{{ form_errors(form.prix) }}                        
+                    </div>
+                    </div> 
+                    <div class="col-md-12 mb-3">
+                      <div class="form-group">
+  {{ form_label(form.type,"Type S+ ") }}
+ {{ form_widget(form.type,{'attr': {'class': 'form-control form-control-lg form-control-a'}})}}
+ {{ form_errors(form.type) }}
+                    </div>
+                     <div class="col-md-12 mb-3">
+                      <div class="form-group">
+   {{ form_label(form.duree,"duree") }}
+ {{ form_widget(form.duree,{'attr': {'class': 'form-control form-control-lg form-control-a'}})}}
+ {{ form_errors(form.duree) }}                    
+                    </div>
+                     <div class="col-md-12 mb-3">
+                      <div class="form-group">
+{{ form_label(form.email,"email") }}  
+{{ form_widget(form.email,{'attr': {'class': 'form-control form-control-lg form-control-a'}})}}  
+{{ form_errors(form.email) }}                     
+                      </div>
+                    </div>
+                       </div>
+                     <div class="col-md-12 mb-3">
+                      <div class="form-group">
+{{ form_label(form.image,"Image") }}
+ {{ form_widget(form.image)}}
+{{ form_errors(form.image) }} 
+                      </div>
+                    </div>
+                  
+                 
+                  </div>
+
+
+              </div>
+    <button class="btn btn-a">{{ button_label|default('Save') }}</button>
+ </center> 
+{{ form_end(form) }}
